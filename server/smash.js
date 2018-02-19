@@ -4,7 +4,7 @@ const smashgg = require('smashgg.js');
  
 class Smash{
     
-    static async tournament(req, res){
+    static tournament(req, res){
         // /name, expands
         try{
             let tournamentName = req.body.tournamentName;
@@ -17,11 +17,11 @@ class Smash{
             
         } catch(err){
             console.error(err);
-            res.sendStatus(500);
+            return res.status(500).send(err);
         }
     }
     
-    static async event(req, res){
+    static event(req, res){
         //tournamentName, eventName, expands
         try{
             let tournamentName = req.body.tournamentName;
@@ -34,11 +34,11 @@ class Smash{
             })
         } catch(err){
             console.error(err);
-            return res.sendStatus(500);
+            return res.status(500).send(err);
         }
     }
     
-    static async phase(req, res){
+    static phase(req, res){
         //id, expands
         try {
             let id = req.body.id;
@@ -51,12 +51,12 @@ class Smash{
             
         } catch(err) {
             console.log(err);
-            return res.sendStatus(500);
+            return res.status(500).send(err);
         }
         
     }
     
-    static async phasegroup(req, res){
+    static phasegroup(req, res){
         //id, expands
         try {
             let id = req.body.id;
@@ -68,7 +68,7 @@ class Smash{
             })
         } catch(e) {
             console.log(e);
-            return res.sendStatus(500);
+            return res.status(500).send(err);
         }
     }
     
