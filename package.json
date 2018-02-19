@@ -1,0 +1,27 @@
+{
+  "name": "smashgg-api-cors-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrandonCookeDev/smashgg-api-cors-server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BrandonCookeDev/smashgg-api-cors-server/issues"
+  },
+  "homepage": "https://github.com/BrandonCookeDev/smashgg-api-cors-server#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "lodash": "^4.17.5",
+    "smashgg.js": "^1.0.5",
+    "winston": "^2.4.0"
+  }
+}

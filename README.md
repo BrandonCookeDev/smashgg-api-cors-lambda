@@ -1,0 +1,1 @@
+# smashgg-api-cors-server
