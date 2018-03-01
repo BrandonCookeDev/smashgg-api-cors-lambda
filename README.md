@@ -1,6 +1,6 @@
 # smashgg-api-cors-server
 
-The smashgg-api-cors-server is a simple express server built to serve as a CORS-supported middleware in order to access the [smashgg.js](https://github.com/BrandonCookeDev/smashgg-promise) library.
+The smashgg-api-cors-server is a simple express server built to serve as a CORS-supported middleware in order to access the [smashgg.js](https://github.com/BrandonCookeDev/smashgg.js) library.
 
 ## Contents
 - [Endpoints](#endpoints)
