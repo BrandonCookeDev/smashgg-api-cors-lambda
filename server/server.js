@@ -10,7 +10,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Require routes
-const routes = require('./server/endpoints');
+const routes = require('./lib/endpoints');
 
 app.use(bodyParser.urlencoded({extended: true}));
 
