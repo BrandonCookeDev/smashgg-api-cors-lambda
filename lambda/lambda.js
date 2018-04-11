@@ -15,7 +15,7 @@ exports.handler = async function(event, context, callback) {
         console.log('event:', event);
         console.log('context:', context);
 
-        let data = await main.run();
+        let data = await main.run(event);
         callback(null, data);
     } catch(e){
         console.error(e);
