@@ -15,8 +15,22 @@ exports.handler = async function(event, context, callback) {
         console.log('event:', event);
         console.log('context:', context);
 
-        let data = await main.run(event);
-        callback(null, data);
+        let input = event.body ? event.body : event;
+        console.log('input:', input);
+        input = typeof(input) === 'string' ? JSON.parse(input) : input;
+
+        //Get data and return
+        let data = await main.run(input);
+        console.log('returning data:', data);
+
+        let response = {
+            statusCode: 200,
+            headers: {
+                "x-custom-header" : "my custom header value"
+            },
+            body: JSON.stringify(data)
+        };
+        callback(null, response);
     } catch(e){
         console.error(e);
         callback(e, null)
