@@ -10,14 +10,14 @@ exports.run = async function(request){
                 data = await smashgg.tournament(
                     request.tournamentName, 
                     request.expands
-                )
+                );
                 break;
             case 'event':
                 data = await smashgg.event(
                     request.tournamentName,
                     request.eventName,
                     request.expands
-                )
+                );
                 break;
             case 'phase':
                 data = await smashgg.phase(
@@ -29,7 +29,7 @@ exports.run = async function(request){
                 data = await smashgg.phasegroup(
                     request.id,
                     request.expands
-                )
+                );
                 break;
             default:
                 throw new Error('not a valid resource: ' + request.type);

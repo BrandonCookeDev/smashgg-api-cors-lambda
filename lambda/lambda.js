@@ -11,7 +11,7 @@ exports.handler = async function(event, context, callback) {
             process.exit(1);
         });
 
-        console.log('smashgg-lambda called')
+        console.log('smashgg-lambda called');
         console.log('event:', event);
         console.log('context:', context);
 
@@ -23,17 +23,24 @@ exports.handler = async function(event, context, callback) {
         let data = await main.run(input);
         console.log('returning data:', data);
 
-        let response = {
-            statusCode: 200,
-            headers: {
-                "x-custom-header" : "my custom header value"
-            },
-            body: JSON.stringify(data)
-        };
+        let response = formatApiGatewayResponse(200, data);
         callback(null, response);
     } catch(e){
         console.error(e);
-        callback(e, null)
+        let response = formatApiGatewayResponse(500, e);
+        callback(null, response);
     }
 
+};
+
+function formatApiGatewayResponse(code, body){
+    let response = {
+        statusCode: code,
+        headers: {
+            "x-custom-header" : "my custom header value",
+            "Access-Control-Allow-Origin": "*"
+        },
+        body: JSON.stringify(body)
+    };
+    return response;
 }
