@@ -1,0 +1,51 @@
+{
+"AWSTemplateFormatVersion": "2010-09-09",
+	"Description": "",
+	"Metadata": {
+
+	},
+	"Parameters": {
+	
+	},
+	"Mappings": {
+
+	},
+	"Conditions": {
+
+	},
+	"Resources": {
+		"smashggAPILambda": {
+		  "Type": "AWS::Lambda::Function",
+		  "Properties": {
+			"Code": {
+			  "S3Bucket": "",
+			  "S3Key": "",
+			  "S3ObjectVersion": "",
+			  "ZipFile": ""
+			},
+			"Handler": "",
+			"Role": "",
+			"Runtime": "",
+			"FunctionName": "",
+			"MemorySize": 128,
+			"Timeout": 5,
+			"KmsKeyArn": "",
+			"Environment": {
+			  "Variables": {
+				"":"",
+				"":""
+			  }
+			},
+			"VpcConfig": {
+			  "SecurityGroupIds": [ ],
+			  "SubnetIds": [ ]
+			},
+			"Description": ""
+		  }
+		}
+		
+	},
+	"Outputs": {
+
+	}
+}

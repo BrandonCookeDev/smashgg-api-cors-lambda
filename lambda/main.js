@@ -31,9 +31,20 @@ exports.run = async function(request){
                     request.expands
                 );
                 break;
+            case 'set':
+                data = await smashgg.set(request.id);
+                break;
+            case 'sets': 
+                data = await smashgg.sets(request.idArray);
+                break;
+            case 'player': 
+                data = await smashgg.player(request.id);
+                break;
+            case 'players': 
+                data = await smashgg.player(request.idArray);
+                break;
             default:
                 throw new Error('not a valid resource: ' + request.type);
-                break;
         }
         return data;
     } catch(e){
